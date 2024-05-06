@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "ravirajdarisi/auth-service/api/protobufs;protobufs";
+
+package otp;
+
+service OtpService {
+  rpc GenerateOtp(OtpRequest) returns (OtpResponse);
+}
+
+message OtpRequest {
+  string phone_number = 1;
+}
+
+message OtpResponse {
+  string message = 1;
+}
